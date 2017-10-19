@@ -1,4 +1,4 @@
-import {UAgent} from "./commons.constants";
+import {UAgent} from "../commons.constants";
 
 const deviceWinPhone7 = "windows phone os 7";
 const deviceWinMob = "windows ce";

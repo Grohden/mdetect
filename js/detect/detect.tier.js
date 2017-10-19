@@ -1,15 +1,15 @@
-import {UAgent} from "./commons.constants";
+import {UAgent} from "../commons.constants";
 import {DetectWebkit} from "./detect.webkit";
 import {DetectWindowsMobile, DetectWindowsPhone7} from "./detect.windows";
-import {DetectIphoneOrIpod, DetectIpad} from "./detect.apple";
+import {DetectIpad, DetectIphoneOrIpod} from "./detect.apple";
 import {DetectAndroidPhone, DetectAndroidTablet} from "./detect.google";
+import {DetectBlackBerryHigh, DetectBlackBerryTablet, DetectBlackBerryTouch, DetectBlackBerryWebKit} from "./detect.blackberry";
+import {DetectPalmWebOS} from "./detect.palm";
 import {
-    DetectBlackBerryHigh,
-    DetectBlackBerryTouch,
-    DetectBlackBerryWebKit,
-    DetectBlackBerryTablet
-} from "./detect.blackberry";
-
+    DetectGarminNuvifone, DetectMaemoTablet,
+    DetectS60OssBrowser
+} from "./detect.specifics";
+import {DetectMobileLong, DetectMobileQuick} from "./detect.mobile";
 
 const engineTelecaQ = "teleca q"; //a modern feature phone browser
 

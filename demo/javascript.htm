@@ -28,7 +28,7 @@
 
         <!-- Next: Load your JavaScript and CSS. -->
         <!-- Pull the latest version of the JavaScript MobileESP code library from the web site. -->
-        <script type="text/javascript" src="../js/mdetect.js"></script>
+        <script type="text/javascript" src="../build/mobile.bundle.js"></script>
         
         <script type="text/javascript" language="JavaScript">
         
@@ -64,12 +64,12 @@
             //   Sometimes, you may wish to include the Tablet Tier devices here, as well.
             setTimeout(function(){
                 "use strict";
-                if (isTierIphone)
+                if (MDetect.isTierIphone)
                 {
                     window.location = iphoneTierHomePage;
                 }
                 //We can generally use the Quick Mobile detection method to save a couple of cycles.
-                else if (DetectMobileQuick())
+                else if (MDetect.DetectMobileQuick())
                 {
                     window.location = genericMobileHomePage;
                 }

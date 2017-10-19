@@ -6,5 +6,6 @@
         "window":false
     },
     
-    "laxbreak": true
+    "laxbreak": true,
+    "laxcomma": true
 }

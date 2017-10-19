@@ -1,5 +1,6 @@
 const webpackUglifyJsPlugin = require("webpack-uglify-js-plugin");
 const DEBUG = false;
+const path = require("path");
 
 module.exports = {
     watch: false,
@@ -10,6 +11,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: "babel-loader",
                 query: {
+                    //Review if we can use babel preset env here.
                     presets: ["es2015", "stage-2"]
                 }
             }
@@ -20,16 +22,17 @@ module.exports = {
         aggregateTimeout: 200
     },
     entry: {
-        "mobile.detect": "./js/mdetect.js"
+        "mdetect": "./js/all.bundle.js",
+        "mobile": "./js/mobile.bundle.js"
     },
     output: {
         path: __dirname + "/build/",
-        filename: "js/[name].bundle.js"
+        filename: "[name].bundle.js"
     },
     plugins: [
         new webpackUglifyJsPlugin({
-            //cacheFolder: path.resolve(__dirname, "caches"),
-            debug: !DEBUG,
+            cacheFolder: path.resolve(__dirname, "caches"),
+            debug: DEBUG,
             minimize: !DEBUG,
             sourceMap: true,
             output: {

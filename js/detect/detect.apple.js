@@ -1,5 +1,5 @@
-import {UAgent} from './commons.constants';
-import {DetectWebkit} from 'detect.webkit';
+import {UAgent} from "../commons.constants";
+import {DetectWebkit} from "./detect.webkit";
 
 
 //TODO: review if this should be in a separated file.

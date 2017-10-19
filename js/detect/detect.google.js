@@ -1,4 +1,4 @@
-import {UAgent, mobile} from "./commons.constants";
+import {UAgent, mobile} from "../commons.constants";
 
 const deviceAndroid = "android";
 const deviceHtcFlyer = "htc_flyer"; //HTC Flyer
@@ -74,7 +74,7 @@ function DetectAndroidPhone() {
  */
 function DetectAndroidTablet() {
     //Special check for the HTC Flyer 7" tablet. It should NOT report here.
-    if (uagent.search(deviceHtcFlyer) > -1) {
+    if (UAgent.search(deviceHtcFlyer) > -1) {
         return false;
     }
     return DetectAndroid() && !(UAgent.search(mobile) > -1);

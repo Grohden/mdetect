@@ -1,4 +1,5 @@
-import {UAgent} from "./commons.constants";
+import {UAgent} from "../commons.constants";
+import {engineWebKit} from "./detect.webkit";
 
 const deviceBB = "blackberry";
 const vndRIM = "vnd.rim"; //Detectable when BB devices emulate IE or Firefox
@@ -111,5 +112,6 @@ export {
     DetectBlackBerryTablet,
     DetectBlackBerryWebKit,
     DetectBlackBerryTouch,
+    DetectBlackBerryLow,
     DetectBlackBerryHigh
 };

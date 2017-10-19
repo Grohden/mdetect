@@ -1,4 +1,4 @@
-import {UAgent} from "./commons.constants";
+import {UAgent} from "../commons.constants";
 
 const devicePalm = "palm";
 const deviceWebOS = "webos"; //For Palm's line of WebOS devices

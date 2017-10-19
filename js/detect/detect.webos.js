@@ -1,5 +1,7 @@
-import {UAgent} from "./commons.constants";
+import {deviceTablet, UAgent} from "../commons.constants";
 import {DetectPalmWebOS} from "./detect.palm";
+
+const deviceWebOShp = "hpwos"; //For HP's line of WebOS devices
 
 /**
  * @function DetectWebOSTablet

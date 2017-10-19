@@ -1,9 +1,20 @@
+import {UAgent} from "../commons.constants";
 import {DetectWindowsPhone7, DetectWindowsMobile} from "./detect.windows";
 import {DetectIphoneOrIpod} from "./detect.apple";
 import {DetectAndroidPhone} from "./detect.google";
 import {DetectBlackBerry} from "./detect.blackberry";
 import {DetectPalmOS, DetectPalmWebOS} from "./detect.palm";
-import {DetectTierTablet} from "./detect.tier";
+import {
+    DetectTierIphone, DetectTierOtherPhones,
+    DetectTierTablet
+} from "./detect.tier";
+
+const engineNetfront = "netfront"; //Common embedded OS browser
+const engineUpBrowser = "up.browser"; //common on some phones
+const engineOpenWeb = "openweb"; //Transcoding by OpenWave server
+const deviceMidp = "midp"; //a mobile Java technology
+const uplink = "up.link";
+
 
 /**
  * @function DetectSmartphone
@@ -82,8 +93,7 @@ function DetectMobileQuick() {
         return true;
     }
     
-    if ((UAgent.search(devicePda) > -1) &&
-        !(UAgent.search(disUpdate) > -1)) {
+    if ((UAgent.search(devicePda) > -1) && !(UAgent.search(disUpdate) > -1)) {
         return true;
     }
     if (UAgent.search(mobile) > -1) {
@@ -130,15 +140,5 @@ function DetectMobileLong() {
 export {
     DetectSmartphone,
     DetectMobileQuick,
-    DetectMobileLong,
-    
-    //Imported functions
-    DetectWindowsPhone7,
-    DetectWindowsMobile,
-    DetectIphoneOrIpod,
-    DetectAndroidPhone,
-    DetectBlackBerry,
-    DetectPalmOS,
-    DetectPalmWebOS,
-    DetectTierTablet
+    DetectMobileLong
 };

@@ -1,4 +1,4 @@
-import {UAgent} from "./commons.constants";
+import {UAgent} from "../commons.constants";
 
 const engineWebKit = "webkit";
 
