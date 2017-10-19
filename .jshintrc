@@ -1,0 +1,10 @@
+{
+    "esnext": true,
+    "quotmark": "double",
+    "camelcase":true,
+    "globals":{
+        "window":false
+    },
+    
+    "laxbreak": true
+}

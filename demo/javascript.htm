@@ -17,7 +17,7 @@
         <!-- Traditional browsers pick up the favicon.ico file -->
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-        <!-- iOS devices plus many other browsers nowadays use these apple touch icon files 
+        <!-- iOS devices plus many other browsers nowadays use these apple touch icon files
         <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
         <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />
@@ -35,49 +35,51 @@
             //SPECIAL NOTES:
             // This is just a DEMO to illustrate usage of the MobileESP JavaScript code library.
             // It is not necessarily a Best Practice to use an intermediary landing and detection page like this example
-            //    when using JavaScript as a detection method. 
-            // See the MobileESP web site for other important information about the limitations of JavaScript. 
+            //    when using JavaScript as a detection method.
+            // See the MobileESP web site for other important information about the limitations of JavaScript.
         
             var time = null;
             
-            //For this demo, I created a few variables to store the paths to the alternate web pages. 
+            //For this demo, I created a few variables to store the paths to the alternate web pages.
             var iphoneTierHomePage = 'index-tier-iphone.htm';
             var genericMobileHomePage = 'index-generic-mobile.htm';
             var desktopHomePage = 'index-desktop.htm';
             
             //This is a common mobile detection scenario...
-            // First, detect iPhone tier devices, like iPod Touches, Android, WebOS, etc. 
-            //    Send them to the nice touch-optimized page. 
+            // First, detect iPhone tier devices, like iPod Touches, Android, WebOS, etc.
+            //    Send them to the nice touch-optimized page.
             //    These often have rich CSS and advanced but mobile-friendly JavaScript functionality and no Flash.
             // Second, detect any other mobile device. Send them to the basic mobile pages, with light CSS and no JavaScript.
             //    Some (often older) touch devices might be included in this bunch, which otherwise includes feature phones.
-            //    It's a Best Practice to include an alternate web page for less-capable mobile devices. 
-            // Finally, assume anything else not caught by these filters is a desktop PC-class device. 
-            //    Send them to your regular home page which may include large pictures, lots of JS, Flash, etc.. 
+            //    It's a Best Practice to include an alternate web page for less-capable mobile devices.
+            // Finally, assume anything else not caught by these filters is a desktop PC-class device.
+            //    Send them to your regular home page which may include large pictures, lots of JS, Flash, etc..
             //
-            // NOTE: If you wanted an iPad-class tablet-optimized web site, too, then you should FIRST do a 
-            //    device detection using the DetectTierTablet() method. Then detect for iPhone tier, and so on. 
+            // NOTE: If you wanted an iPad-class tablet-optimized web site, too, then you should FIRST do a
+            //    device detection using the DetectTierTablet() method. Then detect for iPhone tier, and so on.
             
             //We have variables for certain high-usage device variables, like the iPhone Tier.
             //   You might use the device variables to show/hide certain functionality or platform-specific features and ads, etc.
             //   Alternately, you can use the method: DetectTierIphone().
-            //   Sometimes, you may wish to include the Tablet Tier devices here, as well. 
-            if (isTierIphone)
-            {
-                window.location = iphoneTierHomePage;
-            }
-            //We can generally use the Quick Mobile detection method to save a couple of cycles.  
-            else if (DetectMobileQuick())
-            {
-                window.location = genericMobileHomePage;
-            }
-            //We'll assume that anything else not caught in the above filters is a desktop-class device. 
-            //   (Which can include tablets.)
-            else
-            {
-                window.location = desktopHomePage;
-            }
-            
+            //   Sometimes, you may wish to include the Tablet Tier devices here, as well.
+            setTimeout(function(){
+                "use strict";
+                if (isTierIphone)
+                {
+                    window.location = iphoneTierHomePage;
+                }
+                //We can generally use the Quick Mobile detection method to save a couple of cycles.
+                else if (DetectMobileQuick())
+                {
+                    window.location = genericMobileHomePage;
+                }
+                //We'll assume that anything else not caught in the above filters is a desktop-class device.
+                //   (Which can include tablets.)
+                else
+                {
+                    window.location = desktopHomePage;
+                }
+            },1000);
         //-->
 </script>
     </head>

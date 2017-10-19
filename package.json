@@ -1,0 +1,27 @@
+{
+  "name": "mdetect",
+  "version": "1.0.1",
+  "description": "",
+  "main": "web.pack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grohden/mdetect.git"
+  },
+  "keywords": [
+    "device",
+    "mobile",
+    "detect"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grohden/mdetect/issues"
+  },
+  "homepage": "https://github.com/Grohden/mdetect#readme",
+  "dependencies": {
+    "webpack": "^3.8.1"
+  }
+}
