@@ -23,7 +23,7 @@ module.exports = {
     },
     entry: {
         "mdetect": "./js/all.bundle.js",
-        "mobile": "./js/mobile.bundle.js"
+        "mdetect.mobile": "./js/mobile.bundle.js"
     },
     output: {
         path: __dirname + "/build/",

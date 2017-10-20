@@ -1,21 +1,40 @@
-import {UAgent} from "../commons.constants";
-import {DetectWindowsPhone7, DetectWindowsMobile} from "./detect.windows";
+import {mobile, UAgent} from "../commons.constants";
+import {DetectWindowsMobile, DetectWindowsPhone7} from "./detect.windows";
 import {DetectIphoneOrIpod} from "./detect.apple";
 import {DetectAndroidPhone} from "./detect.google";
 import {DetectBlackBerry} from "./detect.blackberry";
 import {DetectPalmOS, DetectPalmWebOS} from "./detect.palm";
+import {DetectTierTablet} from "./detect.tier";
 import {
-    DetectTierIphone, DetectTierOtherPhones,
-    DetectTierTablet
-} from "./detect.tier";
+    DetectArchos,
+    DetectBrewDevice,
+    DetectDangerHiptop,
+    DetectGarminNuvifone,
+    DetectKindle,
+    DetectMaemoTablet,
+    DetectOperaMobile,
+    DetectS60OssBrowser,
+    DetectSonyMylo,
+    DetectSymbianOS
+} from "./detect.specifics";
+import {DetectGameConsole} from "./detect.game-consoles";
 
 const engineNetfront = "netfront"; //Common embedded OS browser
 const engineUpBrowser = "up.browser"; //common on some phones
 const engineOpenWeb = "openweb"; //Transcoding by OpenWave server
 const deviceMidp = "midp"; //a mobile Java technology
 const uplink = "up.link";
+const devicePda = "pda";
 
+//In some UserAgents, the only clue is the manufacturer.
+const manuSonyEricsson = "sonyericsson";
+const manuericsson = "ericsson";
+const manuSamsung1 = "sec-sgh";
 
+//In some UserAgents, the only clue is the operator.
+const svcDocomo = "docomo";
+const svcKddi = "kddi";
+const svcVodafone = "vodafone";
 /**
  * @function DetectSmartphone
  * @description
@@ -26,6 +45,8 @@ const uplink = "up.link";
  * @return {boolean}
  */
 function DetectSmartphone() {
+    "use strict";
+    
     if (   DetectIphoneOrIpod()
         || DetectAndroidPhone()
         || DetectS60OssBrowser()
@@ -53,6 +74,8 @@ function DetectSmartphone() {
  * @return {boolean}
  */
 function DetectMobileQuick() {
+    "use strict";
+    
     //Let's exclude tablets.
     if (DetectTierTablet()) {
         return false;
@@ -111,6 +134,8 @@ function DetectMobileQuick() {
  * @return {boolean}
  */
 function DetectMobileLong() {
+    "use strict";
+    
     if (DetectMobileQuick()) {
         return true;
     }
@@ -140,5 +165,26 @@ function DetectMobileLong() {
 export {
     DetectSmartphone,
     DetectMobileQuick,
-    DetectMobileLong
+    DetectMobileLong,
+    
+    //Export imported
+    DetectWindowsPhone7,
+    DetectWindowsMobile,
+    DetectIphoneOrIpod,
+    DetectAndroidPhone,
+    DetectBlackBerry,
+    DetectPalmOS,
+    DetectPalmWebOS,
+    DetectTierTablet,
+    DetectArchos,
+    DetectBrewDevice,
+    DetectDangerHiptop,
+    DetectGarminNuvifone,
+    DetectKindle,
+    DetectMaemoTablet,
+    DetectOperaMobile,
+    DetectS60OssBrowser,
+    DetectSonyMylo,
+    DetectSymbianOS,
+    DetectGameConsole
 };

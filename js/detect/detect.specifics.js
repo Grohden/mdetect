@@ -1,6 +1,7 @@
 //FIXME: find a better way to separate this functions, maybe its better to have one file for each of them.
 import {UAgent} from "../commons.constants";
 import {DetectWebkit} from "./detect.webkit";
+import {DetectWebOSTablet} from "./detect.webos";
 
 const deviceSymbian = "symbian";
 const deviceS60 = "series60";
@@ -27,7 +28,7 @@ const deviceArchos = "archos";
 
 const engineOpera = "opera"; //Popular browser
 
-const devicePda = "pda";
+
 const mini = "mini";  //Some mobile browsers put 'mini' in their names.
 
 //Use Maemo, Tablet, and Linux to test for Nokia's Internet Tablets.
@@ -36,17 +37,10 @@ const linux = "linux";
 const qtembedded = "qt embedded"; //for Sony Mylo and others
 const mylocom2 = "com2"; //for Sony Mylo also
 
-//In some UserAgents, the only clue is the manufacturer.
-const manuSonyEricsson = "sonyericsson";
-const manuericsson = "ericsson";
-const manuSamsung1 = "sec-sgh";
-const manuSony = "sony";
-const manuHtc = "htc"; //Popular Android and WinMo manufacturer
 
-//In some UserAgents, the only clue is the operator.
-const svcDocomo = "docomo";
-const svcKddi = "kddi";
-const svcVodafone = "vodafone";
+const manuSony = "sony";
+
+
 
 //Disambiguation strings.
 const disUpdate = "update"; //pda vs. update

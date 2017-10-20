@@ -6,6 +6,7 @@ const deviceWindows = "windows";
 const deviceIeMob = "iemobile";
 const devicePpc = "ppc"; //Stands for PocketPC
 const enginePie = "wm5 pie";  //An old Windows Mobile
+const manuHtc = "htc"; //Popular Android and WinMo manufacturer
 
 /**
  * @function DetectWindowsMobile

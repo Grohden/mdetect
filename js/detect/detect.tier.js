@@ -6,10 +6,12 @@ import {DetectAndroidPhone, DetectAndroidTablet} from "./detect.google";
 import {DetectBlackBerryHigh, DetectBlackBerryTablet, DetectBlackBerryTouch, DetectBlackBerryWebKit} from "./detect.blackberry";
 import {DetectPalmWebOS} from "./detect.palm";
 import {
-    DetectGarminNuvifone, DetectMaemoTablet,
+    DetectGarminNuvifone,
+    DetectMaemoTablet,
     DetectS60OssBrowser
 } from "./detect.specifics";
 import {DetectMobileLong, DetectMobileQuick} from "./detect.mobile";
+import {DetectWebOSTablet} from "./detect.webos";
 
 const engineTelecaQ = "teleca q"; //a modern feature phone browser
 
@@ -24,6 +26,8 @@ const engineTelecaQ = "teleca q"; //a modern feature phone browser
  * @return {boolean}
  */
 function DetectTierTablet() {
+    "use strict";
+    
     return DetectIpad()
         || DetectAndroidTablet()
         || DetectBlackBerryTablet()
@@ -41,6 +45,8 @@ function DetectTierTablet() {
  * @return {boolean}
  */
 function DetectTierRichCss() {
+    "use strict";
+    
     if (DetectMobileQuick()) {
         if (DetectTierIphone()) {
             return false;
@@ -85,6 +91,8 @@ function DetectTierRichCss() {
  * @return {boolean}
  */
 function DetectTierIphone() {
+    "use strict";
+    
     if (DetectIphoneOrIpod()) {
         return true;
     }
@@ -114,6 +122,8 @@ function DetectTierIphone() {
  * @return {boolean}
  */
 function DetectTierOtherPhones() {
+    "use strict";
+    
     if (DetectMobileLong()) {
         //Exclude devices in the other 2 categories
         return !(DetectTierIphone() || DetectTierRichCss());

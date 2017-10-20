@@ -28,7 +28,7 @@
 
         <!-- Next: Load your JavaScript and CSS. -->
         <!-- Pull the latest version of the JavaScript MobileESP code library from the web site. -->
-        <script type="text/javascript" src="../build/mobile.bundle.js"></script>
+        <script type="text/javascript" src="../build/mdetect.mobile.bundle.js"></script>
         
         <script type="text/javascript" language="JavaScript">
         
@@ -62,8 +62,18 @@
             //   You might use the device variables to show/hide certain functionality or platform-specific features and ads, etc.
             //   Alternately, you can use the method: DetectTierIphone().
             //   Sometimes, you may wish to include the Tablet Tier devices here, as well.
-            setTimeout(function(){
+            
+            //TODO: review and implement a unit test instead of this.
+            MDetect.DetectSmartphone();
+            MDetect.DetectMobileLong();
+            
+            //setTimeout(timeoutCall, 1000);
+
+            function timeoutCall(){
                 "use strict";
+    
+    
+    
                 if (MDetect.isTierIphone)
                 {
                     window.location = iphoneTierHomePage;
@@ -79,7 +89,8 @@
                 {
                     window.location = desktopHomePage;
                 }
-            },1000);
+    
+            }
         //-->
 </script>
     </head>
